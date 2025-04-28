@@ -1,0 +1,31 @@
+1- How does the script handle options:
+
+
+# It checks the initial arguments for -n, -v, or a combination like -vn/-nv.
+
+# It then removes the options from the argument list, leaving the search string and filename.
+
+# After that, it performs the search based on the flags that were set.
+
+---------------------------------------------------------
+
+2- If we wanted to add support for regex or additional options like -i, -c, -l, how would the structure change:
+
+We could switch from using a simple while/case to parsing optionsm,  We would support regex by using grep -E.
+
+# we can pass the options directly to grep.
+
+# The -i option is already covered as we use grep -i.
+
+# For -c (counting matching lines), we would introduce a counter variable.
+
+# For -l (displaying only the filename if there’s a match)
+
+
+--------------------------------------------------
+
+
+3- What was the hardest part to implement:
+
+
+# Read the file and search in it
